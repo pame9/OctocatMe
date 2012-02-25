@@ -1,0 +1,17 @@
+h1 Companies
+
+a(href="/levels/new") New
+
+table
+  thead
+    th Name
+    th Description
+    th Actions
+  tbody
+    for level in levels
+      tr
+        td= level.name
+        td= level.description
+        td
+          a(href="/levels/#{level.id}") Show
+          a(href="/levels/#{level.id}/edit") Edit

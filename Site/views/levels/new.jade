@@ -1,0 +1,13 @@
+h1 New Company
+
+form(method='post', action='/levels')
+  .formRow
+    label Name:
+    input(type='text', name='level[name]')
+          
+  .formRow
+    label Description:
+    input(type='text', name='level[description]')
+
+  .formRow
+    input(type='submit', value='Create')
