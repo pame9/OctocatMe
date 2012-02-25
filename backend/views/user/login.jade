@@ -2,12 +2,4 @@
   ul#errors
     - each error in errors
       li.error= error
-form(action='/login', method='POST')
-  #login
-    label(for=everyauth.password.loginFormFieldName) Login
-    input(type='text', name=everyauth.password.loginFormFieldName)
-  #password
-    label(for=everyauth.password.passwordFormFieldName) Password
-    input(type='password', name=everyauth.password.passwordFormFieldName)
-  #submit
-    input(type='submit') Login
+      <a href="/auth/github">sign in with github</a>
