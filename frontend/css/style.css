@@ -30,7 +30,6 @@ p { /*display:inline;*/ }
   border: 20px solid;
   border-color: #00f #00f #00f transparent;
   margin: 0px auto;
-  float:left;
 }
 
 #splashbox {
