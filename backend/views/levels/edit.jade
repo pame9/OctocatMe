@@ -1,0 +1,16 @@
+h1 Edit #{level.name}
+
+form(method='post', action='/levels/#{level.id}')
+  
+  input(type='hidden', name='_method', value='put')
+  
+  .formRow
+    label Name:
+    input(type='text', name='level[name]', value=level.name)
+  
+  .formRow
+    label Description:
+    textarea(name='level[description]')= level.description
+  
+  .formRow
+    input(type='submit', value='Save')
