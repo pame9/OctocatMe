@@ -1,6 +1,18 @@
 /* HTML5 Boilerplate  */
 
+@font-face {
+    font-family: 'CollegiateRegular';
+    src: url('collegia-webfont.eot');
+    src: url('collegia-webfont.eot?#iefix') format('embedded-opentype'),
+         url('collegia-webfont.woff') format('woff'),
+         url('collegia-webfont.ttf') format('truetype'),
+         url('collegia-webfont.svg#CollegiateRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
+  font-family: 'CollegiateRegular';
   margin: 0;
   font-size: 12px;
   line-height: 1.4;
