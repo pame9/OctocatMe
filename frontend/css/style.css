@@ -1,5 +1,30 @@
 /* HTML5 Boilerplate  */
 
+body {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+  background: url('../img/andycat-tile.jpg') repeat;
+}
+
+#container {
+  width: 900px;
+  margin: 50px auto;
+  padding: 25px;
+  text-align:center;
+}
+
+#splashbox {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid #444;
+  background-color:rgba(0,0,0,0.8);
+  margin: 0 auto;
+  color: #fff;
+}
+
+.text { opacity: 1; }
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
@@ -7,7 +32,7 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
@@ -62,21 +87,10 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
+
+
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 35em) {
-  
-
-}
-
+@media only screen and (min-width: 35em) { }
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
 .ir br { display: none; }
 .hidden { display: none !important; visibility: hidden; }
@@ -101,3 +115,4 @@ td { vertical-align: top; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
 }
+
