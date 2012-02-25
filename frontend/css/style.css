@@ -4,28 +4,39 @@ body {
   margin: 0;
   font-size: 12px;
   line-height: 1.4;
-  background: url('../img/andycat-tile.jpg') repeat;
+  background: #336d86;
 }
 
+h1 { margin:0px; padding:0px; display:inline;}
+p { display:inline; }
+
 #container {
-  width: 900px;
-  margin: 50px auto;
-  padding: 25px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0px;
   text-align:center;
+  background: url('../artwork/factorybg_web.png') no-repeat top;
+  min-height: 700px;
+}
+
+#ribbon {
+  width:20px;
+  border: 20px solid;
+  border-color: #fff #fff #fff transparent;
 }
 
 #splashbox {
-  width: 400px;
+  width: 100%;
   padding: 10px;
-  border: 1px solid #444;
-  background-color:rgba(0,0,0,0.8);
+  background-color:rgba(10,50,68,0.8);
+  background-color:rgba(255,255,255,0.8);
   margin: 0 auto;
-  color: #fff;
-  box-shadow: 10px 10px 25px rgba(0,0,0,0.7);
+  color: #000;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
 }
 
 .bigbutton {
-  font-size: 16px;
+  display: inline;
   margin: 20px auto 0px auto;
   padding: 5px;
   background-color: #336d86;
@@ -33,7 +44,16 @@ body {
   width: 250px;
 }
 
+.bigbutton:hover {
+  background-color: #225c75;
+}
+
 .text { opacity: 1; }
+
+.disclaimer {
+  position:absolute;
+  top: 500px;  
+}
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
