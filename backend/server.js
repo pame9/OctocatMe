@@ -8,7 +8,8 @@ var express = require('express')
     , Schema = mongoose.Schema
     , mongooseAuth = require('mongoose-auth')
     , io = require('socket.io')
-    , routes = require('./routes/routes');
+    , routes = require('./routes/routes')
+    , config = require('./lib/config');
 
     
 

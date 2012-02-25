@@ -23,7 +23,7 @@ UserSchema.plugin(mongooseAuth, {
                myHostname: 'http://localhost:3000'
                , appId: conf.github.appId
                , appSecret: conf.github.appSecret
-               , redirectPath: '/'
+               , redirectPath: '/user/confirmed'
                }
            },
   date_added: { type : Date, default : new Date().getTime() },

@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "OctocatMe",
   "version": "0.0.1-8",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
     "socket.io": "0.8.x",
     "mongoose-auth": "0.0.x"
   },
-  "subdomain": "PlumAlley",
+  "subdomain": "octocatme",
   "scripts": {
     "start": "server.js"
   }
