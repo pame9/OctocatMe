@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-size: 1em;
+  font-size: 12px;
   line-height: 1.4;
   background: url('../img/andycat-tile.jpg') repeat;
 }
@@ -21,6 +21,16 @@ body {
   background-color:rgba(0,0,0,0.8);
   margin: 0 auto;
   color: #fff;
+  box-shadow: 10px 10px 25px rgba(0,0,0,0.7);
+}
+
+.bigbutton {
+  font-size: 16px;
+  margin: 20px auto 0px auto;
+  padding: 5px;
+  background-color: #336d86;
+  border: 1px solid #999;
+  width: 250px;
 }
 
 .text { opacity: 1; }
