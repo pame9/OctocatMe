@@ -73,6 +73,10 @@ app.get('/result',function(req,res) {
 	res.render('result');
 });
 
+app.get('/splash',function(req,res) {
+	res.render('splash');
+});
+
 app.get('/upload',function(req,res) {
 	res.render('upload');
 });

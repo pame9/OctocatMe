@@ -1,0 +1,31 @@
+- if ('undefined' !== typeof errors && errors.length)
+  ul#errors
+    - each error in errors
+      li.error= error
+body(style='background: url("../images/factorybg_web-800.png") no-repeat top; background-color:#366d86;')
+  div(id="container")
+    div(id="toprightbox")
+      div(id="splashbox")
+        div(id="logo")
+          img(src="../images/octocat-logo.png")
+      div(id="ribbon")
+    div(id="topright-text")
+      p Upload a photo of you, get a GitHub-style Octocat that looks like you!
+      p(class="bigbutton") Shit yeah! Let's go!
+  footer
+    p Built with love by 
+      a(href="http://girldeveloper.com", target="_blank", cursor="hand") Sara Chipps,
+      a(href="http://marketpublique.com", target="_blank") Pamela Castillo,
+      a(href="http://milkmusket.net/", target="_blank") Tina Gong, and 
+      a(href="http://tonybacigalupo.com", target="_blank") Tony Bacigalupo at 
+      a(href="http://www.photohackday.org/", target="_blank")PhotoHackDay 2 in NYC.
+    p This site is not affiliated with or endorsed by GitHub, Inc. GitHub&trade;, Octocat&reg;, and the Octocat&reg; design are registered trademarks of GitHub, Inc.
+  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
+  script window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')
+  script(src="js/plugins.js")
+  script(src="js/script.js")
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+
