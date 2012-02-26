@@ -22,7 +22,6 @@ exports.new = function(req, res) {
   res.render('photos/new', {photo : new Photo()});
 }
 
-
 exports.create = function(req, res) {
   var photo = new Photo();
   photo.path = '/images/' + req.files.photo_upload.filename;
@@ -53,15 +52,11 @@ exports.create = function(req, res) {
               console.log("The object is smiling: "+ data.photos[0].tags[0].attributes.smiling.value + ". I am  "+data.photos[0].tags[0].attributes.smiling.confidence+" % sure");
               photo.gender =  data.photos[0].tags[0].attributes.gender.value;
               photo.glass =  data.photos[0].tags[0].attributes.glasses.value;
-              photo.save(function{
+              photo.save(function(){
                  res.render('render');
-              })
-            });
-            
-          }
-  }); 
-  
- 
+              });
+            }); 
+          }}); 
 }
   
 exports.edit = function(req, res) {
