@@ -14,7 +14,7 @@ var express = require('express')
     , everyauth = require('everyauth');
 
     
-
+  require('./models/photo');
   everyauth.github
     .appId(config.gh_clientId)
     .appSecret(config.gh_secret)
@@ -112,7 +112,7 @@ app.configure('production', function(){
 routes.init(app);
 
 var routes = require('./routes')
-
+app.resource('photos', require('./routes/photos'))
 
 app.listen(3000);
 
