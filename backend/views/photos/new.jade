@@ -1,0 +1,9 @@
+
+h1.title Add Photos
+
+form(method='post', action='/photos', enctype="multipart/form-data")
+  .formRow
+    label Upload Photo:
+    input(type='file', name='photo_upload', value=photo.path)
+  .formRow
+    input(type='submit', value='Create')
