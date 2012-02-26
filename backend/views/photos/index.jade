@@ -1,0 +1,17 @@
+h1 Photos
+
+a(href="/photos/new") New
+
+table
+  thead
+    th First Photo
+    th Second Photo
+    th Third Photo
+    th Owner
+  tbody
+    for photo in photos
+      tr
+        td= photo.main_photo
+        td= photo.secondary_photo
+        td= photo.third_photo
+        td new

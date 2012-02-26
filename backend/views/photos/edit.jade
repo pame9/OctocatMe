@@ -1,0 +1,16 @@
+!=partial('../adminheader')
+h1.title Edit Photos
+
+form(method='post', action='/photos/#{photo.id}', enctype="multipart/form-data")
+  input(type='hidden', name='_method', value='put')
+  .formRow
+    label First Photo Data:
+    input(type='file', name='photomain', value=photo.main_photo)
+  .formRow
+    label Second Photo Data:
+    input(type='file', name='photosecond')
+  .formRow
+    label Third Photo Data:
+    input(type='file', name='photothird')
+  .formRow
+    input(type='submit', value='Save')

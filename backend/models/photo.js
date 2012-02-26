@@ -7,10 +7,11 @@ var Schema = mongoose.Schema
 
 var PhotoSchema = new Schema({
   user : {type : ObjectId, ref : "UserSchema"},
-  glasses : {type : boolean},
+  path : {type : String},
+  glasses : {type : Boolean},
   gender : {type: String},
   gender_percent : {type : Number},
-  moode : {type : String},
+  moode : {type : String },
   date_added: { type : Date, default : new Date().getTime() }
 });
 
