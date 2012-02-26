@@ -1,0 +1,2 @@
+xcodebuild: 'clang++' not found
+/Developer/usr/bin/xcodebuild fails with 512 - Unknown error: 512
