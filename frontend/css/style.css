@@ -32,7 +32,7 @@ body {
   font-family: 'CollegiateRegular';
   margin: 0;
   font-size: 18px;
-  background: #333 url('../artwork/factorybg_web-800-dark.png') no-repeat top right;
+  background: #333 url('../images/factorybg_web-800-dark.png') no-repeat top right;
 }
 
 h1 { margin:0px; padding:0px; /*display:inline;*/}
