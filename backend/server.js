@@ -73,6 +73,9 @@ app.get('/result',function(req,res) {
 	res.render('result');
 });
 
+app.get('/upload',function(req,res) {
+	res.render('upload');
+});
 
 app.get('/board',function(req,res) {
     if (!req.session.uid) {
