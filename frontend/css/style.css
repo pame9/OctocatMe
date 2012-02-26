@@ -28,19 +28,66 @@
 	General Styles
 --------------------------*/
 
-
 body {
   font-family: 'CollegiateRegular';
   margin: 0;
   font-size: 18px;
-  background: #336d86;
-  background: #336d86 url('../artwork/factorybg_web.png') no-repeat top;
+  background: #333 url('../artwork/factorybg_web-800-dark.png') no-repeat top;
 }
 
 h1 { margin:0px; padding:0px; /*display:inline;*/}
 p { /*display:inline;*/ }
 a { color: #333; text-decoration:none; }
 a:hover { color: inherit; text-decoration:underline;}
+
+/*____________________
+  TEMPLATE
+______________________ */
+
+#banner {
+  width: 100%;
+  height: 66px;
+  text-align: left;
+  margin-top: 50px;
+  clear:right;
+  padding: 10px 0px 10px 20px;
+  background-color:rgba(255,255,255,1);*/
+  background-color: #fff;
+  color: #000;
+}
+
+#maintextbox {
+  width: 350px;
+  padding: 20px;
+  margin-left: 40px;
+  background-color: rgba(203,203,203,0.8);
+  float:left;
+}
+
+/*UPLOAD FORM*/
+
+fieldset { padding: .6em 0;border:0;border-top: 1px dotted #ddd; }
+legend { font-size: 1.5em; font-weight: bold; color: #555; padding: .5em 1em .5em 0; background: #fff;  }
+label { font-size: 1.4em; display: block; margin: .5em 10px .5em 0;  }
+input#upload { background: #aaa url(../images/bg-btn.png) bottom repeat-x; padding: .4em 1.2em;border: 1px solid #aaa; color: #222; font-size: 1.2em; font-weight: bold; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; cursor: pointer; margin: 2em 0; }
+input#upload:hover { background: #eee; color: #111; border-color:#777; }
+
+
+/*custom upload elements*/
+.customfile-input { position: absolute; height: 100px; cursor: pointer; background: transparent; border: 0; opacity: 0; -moz-opacity: 0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); z-index: 999;  }
+
+.customfile { width: 400px; background: #666; cursor: pointer; overflow: hidden; padding: 2px; border: 1px solid #444; -moz-border-radius:7px; -webkit-border-radius:7px; border-radius:7px;  position: relative; }
+.customfile-disabled { opacity: .5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); cursor: default;  }
+.customfile-feedback { display: block; margin: 1px 1px 1px 5px; font-size: 1.2em; color: #fff; font-style: italic; padding: .3em .6em; }
+.customfile-feedback-populated { color: #fff; font-style: normal; font-weight: bold; padding-left: 20px; background: url(../images/icon-generic.gif) left 4px no-repeat; }
+.customfile-button { border: 1px solid #999; background: #333 url(../images/bg-submit.gif) bottom repeat-x;  color: #fff; font-weight: bold; float: right; width: 50px; padding: .3em .6em;  text-align: center; text-decoration: none;  font-size: 1.2em; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;  }
+.customfile-hover .customfile-button, .customfile-focus .customfile-button  { color:#111; background: #aaa url(../images/bg-btn.png) bottom repeat-x; border-color:#aaa;  padding: .3em .6em;  }
+.customfile-focus .customfile-button { outline: 1px dotted #ccc;  }
+
+/*file type icons*/
+.customfile-ext-jpg, .customfile-ext-gif, .customfile-ext-png, .customfile-ext-jpeg, .customfile-ext-bmp { background-image: url(../images/icon-image.gif);}
+.customfile-ext-mp3, .customfile-ext-mp4, .customfile-ext-mov, .customfile-ext-swf, .customfile-ext-wav, .customfile-ext-m4v { background-image: url(../images/icon-media.gif);}
+.customfile-ext-zip, .customfile-ext-tar, .customfile-ext-sit { background-image: url(../images/icon-zip.gif);}
 
 
 /*-------------------------
@@ -248,11 +295,12 @@ footer a {
   background-color: #ca3e44;
   color: #fff;
   width: 250px;
+  cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 .bigbutton:hover {
-  background-color: #225c75;
+  background-color: #bd3137;
 }
 
 .text { opacity: 1; }

@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="js/jQuery-Custom-File-Input"></script>
 </head>
-<body style="background: url('artwork/factorybg_web-800.png') no-repeat top; background-color:#366d86;">
+<body>
  <span class= "splash">
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
@@ -22,19 +23,26 @@
   </header>
   <div role="main">
     <div id="container">
-      <div id="toprightbox">
-        <div id="splashbox">
-          <div id="logo"><img src="artwork/octocat-logo.png"></p></div>
+        <div id="banner">
+          <img src="artwork/octocat-logo.png">
         </div>
-	<div id="ribbon">
-	</div>
-	<div id="topright-text">
-          <p>Upload a photo of you, get a GitHub-style Octocat that looks like you!</p>
-          <div class="bigbutton">
-              Shit yeah! Let's go!
-          </div>
+        <div id="maintextbox">
+		  <h1>Upload Your Headshot</h1>
+		  <p>Tip: Make sure it shows mostly your face and it's head-on.</p>
+		  <form action="#">
+				<fieldset>
+					<label for="file">Choose photo</label>
+					<input type="file" name="file" id="file" />
+					<input type="submit" name="upload" id="upload" value="Upload photo" />
+					<script type="text/javascript">
+				    $(document).ready(function(){
+								$('#file').customFileInput();	
+				    });
+				    </script>
+				</fieldset>
+		</form>
+	    </div>
     </div>
-      </div>
     </div>
   </div>
   <footer>
