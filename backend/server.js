@@ -69,6 +69,9 @@ app.get('/',function(req,res) {
 	res.render('login');
 });
 
+app.get('/result',function(req,res) {
+	res.render('result');
+});
 
 
 app.get('/board',function(req,res) {
