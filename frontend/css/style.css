@@ -32,7 +32,7 @@ body {
   font-family: 'CollegiateRegular';
   margin: 0;
   font-size: 18px;
-  background: #333 url('../artwork/factorybg_web-800-dark.png') no-repeat top;
+  background: #333 url('../artwork/factorybg_web-800-dark.png') no-repeat top right;
 }
 
 h1 { margin:0px; padding:0px; /*display:inline;*/}
@@ -57,11 +57,17 @@ ______________________ */
 }
 
 #maintextbox {
-  width: 350px;
+  width: 900px;
   padding: 20px;
-  margin-left: 40px;
-  background-color: rgba(203,203,203,0.8);
+  margin-left: 20px;
+  background-color: rgba(5,5, 5, 0.5);
   float:left;
+}
+
+#octocatbuild {
+  width: 600px;
+  background-color: rgba(54,109,134, 1);
+  /*margin-left: -40px;*/
 }
 
 /*UPLOAD FORM*/
