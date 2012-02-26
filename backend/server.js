@@ -77,6 +77,10 @@ app.get('/upload',function(req,res) {
 	res.render('upload');
 });
 
+app.get('/error',function(req,res) {
+	res.render('error');
+});
+
 app.get('/board',function(req,res) {
     if (!req.session.uid) {
         return res.redirect('/');
