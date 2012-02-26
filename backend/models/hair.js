@@ -8,7 +8,8 @@ var Schema = mongoose.Schema
 var HairSchema = new Schema({
   color : {type : String},
   length : {type : String},
-  image : {type : String}
+  image : {type : String},
+  gender : {type: String}
 });
 
 

@@ -3,7 +3,11 @@ var _ = require('underscore')
   , fs = require('fs')
   , sys = require('sys')
   , api = require('restler')
-  , util = require('util');
+  , util = require('util')
+  , Canvas = require('canvas')
+  , canvas = new Canvas(200,200)
+  , Image = Canvas.Image
+  , ctx = canvas.getContext('2d'); 
 
 var Photo = mongoose.model('Photo');
 
@@ -28,17 +32,32 @@ exports.create = function(req, res) {
           if(err) {
             next(err);
           } else {
-            photo.save(function(err) {
-                var api_key = 'ca2f9dbee60a4eb329d48d13a2907121';
-                    api_secret = '0253e61b1570e8dabc147dc7b67b1c57'
-                    image_url = 'http://localhost:3030/public/images/' + req.files.photo_upload.filename; 
-                    console.log(image_url);
-                api.get('http://api.face.com/faces/detect.json?api_key='+api_key+'&api_secret='+api_secret+'&urls='+image_url).on('complete', function(data) {
-                  console.log(data);
-                  console.log("the object gender is: "+ data.photos[0].tags[0].attributes.gender.value + ". I am  "+data.photos[0].tags[0].attributes.gender.confidence+" % sure");
-                  console.log("The object is smiling: "+ data.photos[0].tags[0].attributes.smiling.value + ". I am  "+data.photos[0].tags[0].attributes.smiling.confidence+" % sure");
-                });
-             })
+            var api_key = 'ca2f9dbee60a4eb329d48d13a2907121';
+                api_secret = '0253e61b1570e8dabc147dc7b67b1c57'
+                image_url = 'https://royal-blood.showoff.io/images/' + req.files.photo_upload.filename; 
+            api.get('http://api.face.com/faces/detect.json?api_key='+api_key+'&api_secret='+api_secret+'&urls='+image_url).on('complete', function(data) {
+              console.log(image_url);
+              var img = new Image;
+              img.onload = function(){
+                console.log("you're here");
+                var width = img.width, height = img.height;
+                ctx.drawImage(img, 0, 0, width, height);
+                var center_x = data.photos[0].tags[0].center.x;
+                var center_y = data.photos[0].tags[0].center.y;
+                var distance = data.photos[0].tags[0].height / 2; 
+                data = ctx.getImageData(center_x, center_y, center_x + 3, center_y + 3).data;
+                console.log(data);}
+               img.src = image_url;
+              console.log(data);
+              console.log("the object gender is: "+ data.photos[0].tags[0].attributes.gender.value + ". I am  "+data.photos[0].tags[0].attributes.gender.confidence+" % sure");
+              console.log("The object is smiling: "+ data.photos[0].tags[0].attributes.smiling.value + ". I am  "+data.photos[0].tags[0].attributes.smiling.confidence+" % sure");
+              photo.gender =  data.photos[0].tags[0].attributes.gender.value;
+              photo.glass =  data.photos[0].tags[0].attributes.glasses.value;
+              photo.save(function{
+                 res.render('render');
+              })
+            });
+            
           }
   }); 
   

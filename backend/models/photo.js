@@ -6,7 +6,7 @@ var Schema = mongoose.Schema
     , ObjectId = Schema.ObjectId;
 
 var PhotoSchema = new Schema({
-  user : {type : ObjectId, ref : "UserSchema"},
+  user : {type : String},
   path : {type : String},
   glasses : {type : Boolean},
   gender : {type: String},
