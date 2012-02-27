@@ -6,11 +6,10 @@ var Schema = mongoose.Schema
     , ObjectId = Schema.ObjectId;
 
 var CatSchema = new Schema({
-  hair : {type : ObjectId, ref : "HairSchema"},
-  hair_color : {type : String},
-  language : {type : ObjectId, ref : "LanguageSchema"},
-  glasses : {type : ObjectId, ref : "GlassesSchema"}   
-});
+  gender : {type : String},
+  image : {type : String},
+  glasses : {type : String},
+  });
 
 
 exports.Cat = mongoose.model('Cat', CatSchema);

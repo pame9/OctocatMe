@@ -15,6 +15,7 @@ var express = require('express')
 
     
   require('./models/photo');
+  require('./models/cat');
   everyauth.github
     .appId(config.gh_clientId)
     .appSecret(config.gh_secret)
@@ -32,8 +33,9 @@ var express = require('express')
 
 require('express-resource');
 
+mongoose.connect("mongodb://localhost/CatDev");
 //remote
-mongoose.connect("mongodb://nodejitsu:50f3236694d088756f9804436d6f0f52@staff.mongohq.com:10034/nodejitsudb537642118814");
+//mongoose.connect("mongodb://nodejitsu:50f3236694d088756f9804436d6f0f52@staff.mongohq.com:10034/nodejitsudb537642118814");
 
 
 var app = module.exports = express.createServer(
@@ -113,6 +115,26 @@ routes.init(app);
 
 var routes = require('./routes')
 app.resource('photos', require('./routes/photos'))
+
+app.get('/seeds', function(req, res) {
+  var Cat = mongoose.model('Cat');
+  Cat.collection.drop();
+  
+  var cats = [
+      {gender : "Female",  glasses : true, image : 'female-glasses.jpg'},
+      {gender : "Male", glasses : true, image : 'male-glasses.jpg'},
+      {gender : "Female",  glasses : false, image : 'female.jpg'},
+      {gender : "Male", glasses : true, image : 'male.jpg'}
+    ]
+ 
+  cats.forEach(function(comp) {
+    var comp = new Cat(comp)
+    comp.save()
+  })
+
+  res.send("seeded db")
+  
+})
 
 app.listen(3000);
 
