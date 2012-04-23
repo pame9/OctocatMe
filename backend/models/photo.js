@@ -11,7 +11,7 @@ var PhotoSchema = new Schema({
   glasses : {type : Boolean},
   gender : {type: String},
   gender_percent : {type : Number},
-  moode : {type : String },
+  mood : {type : String },
   date_added: { type : Date, default : new Date().getTime() }
 });
 

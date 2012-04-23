@@ -16,6 +16,7 @@ var express = require('express')
     
   require('./models/photo');
   require('./models/cat');
+  
   everyauth.github
     .appId(config.gh_clientId)
     .appSecret(config.gh_secret)
@@ -33,9 +34,9 @@ var express = require('express')
 
 require('express-resource');
 
-mongoose.connect("mongodb://localhost/CatDev");
+//mongoose.connect("mongodb://localhost/CatDev");
 //remote
-//mongoose.connect("mongodb://nodejitsu:50f3236694d088756f9804436d6f0f52@staff.mongohq.com:10034/nodejitsudb537642118814");
+mongoose.connect("mongodb://nodejitsu:50f3236694d088756f9804436d6f0f52@staff.mongohq.com:10034/nodejitsudb537642118814");
 
 
 var app = module.exports = express.createServer(
@@ -71,9 +72,24 @@ app.get('/',function(req,res) {
 	res.render('login');
 });
 
+app.get('/result',function(req,res) {
+	res.render('result');
+});
 
+app.get('/splash',function(req,res) {
+	res.render('splash');
+});
+
+app.get('/upload',function(req,res) {
+	res.render('upload');
+});
+
+app.get('/error',function(req,res) {
+	res.render('error');
+});
 
 app.get('/board',function(req,res) {
+   var Photo = mongoose.model('Photo');
     if (!req.session.uid) {
         return res.redirect('/');
     }
@@ -91,7 +107,8 @@ app.get('/board',function(req,res) {
 		});
 		resp.on('end', function () {
 			repos = JSON.parse(data);
-			res.render('board',{username: req.session.uid, repos: repos});
+			var photo = new Photo();
+			res.render('photos/new',{username: req.session.uid, repos: repos, photo : photo});
 		});
     	});
     request.end();
@@ -113,8 +130,8 @@ app.configure('production', function(){
 // Setup the routes
 routes.init(app);
 
-var routes = require('./routes')
-app.resource('photos', require('./routes/photos'))
+var routes = require('./routes');
+app.resource('photos', require('./routes/photos'));
 
 app.get('/seeds', function(req, res) {
   var Cat = mongoose.model('Cat');
