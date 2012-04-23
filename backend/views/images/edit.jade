@@ -1,0 +1,24 @@
+h1 Edit #{image.feature} #{image.number}
+
+form(method='post', action='/images/#{image.id}')
+  
+  input(type='hidden', name='_method', value='put')
+  
+  .formRow
+    label Feature:
+    input(type='text', name='image[feature]', value=image.feature)
+  
+  .formRow
+    label Number:
+    textarea(name='image[feature]')=image.feature
+    
+  .formRow
+    label SVG:
+    textarea(name='image[svg]')=image.svg
+          
+  .formRow
+    label Gender:
+    textarea(name='image[gender]')=image.gender
+  
+  .formRow
+    input(type='submit', value='Save')

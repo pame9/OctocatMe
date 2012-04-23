@@ -1,0 +1,20 @@
+h1 Images
+
+a(href="/images/new") New
+
+table
+  thead
+    th Feature
+    th Number 
+    th SVG
+    th Gender
+  tbody
+    for image in images
+      tr
+        td=image.feature
+        td=image.number
+        td=image.svg
+        td=image.gender
+        td
+          a(href="/images/#{image.id}") Show
+          a(href="/images/#{image.id}/edit") Edit

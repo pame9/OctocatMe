@@ -1,0 +1,21 @@
+h1 New Image
+
+form(method='post', action='/images')
+  .formRow
+    label Feature:
+    input(type='text', name='image[feature]')
+          
+  .formRow
+    label Number:
+    input(type='text', name='image[number]')
+  
+  .formRow
+      label SVG:
+      input(type='text', name='image[svg]')
+
+  .formRow
+    label Gender:
+    input(type='text', name='image[gender]')
+
+  .formRow
+    input(type='submit', value='Create')
